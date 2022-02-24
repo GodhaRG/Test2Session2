@@ -1,1 +1,76 @@
+gcc -g p1final.c -lm
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x90d: file p1final.c, line 19.
+(gdb) r
+Starting program: /home/runner/Test2Session2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
 
+Breakpoint 1, main () at p1final.c:19
+19  {
+(gdb) n
+21    input(&x1,&y1,&x2,&y2);
+(gdb) s
+input (x1=0x7ffe88371fc4, y1=0x7ffe88371fc8, x2=0x7ffe88371fd0, 
+    y2=0x7ffe88371fcc) at p1final.c:5
+5     printf(" enter the  first points \n");
+(gdb) n
+ enter the  first points 
+6     scanf("%f %f",x1,y1);
+(gdb) n
+2 3
+7     printf("enter the second points\n");
+(gdb) n
+enter the second points
+8     scanf("%f %f",x2,y2);
+(gdb) n
+4 5
+9   }
+(gdb) n
+main () at p1final.c:22
+22    find_distance(x1,y1,x2,y2,&area);
+(gdb) s
+find_distance (x1=2, y1=3, x2=4, y2=5, area=0x7ffe88371fd4) at p1final.c:12
+12    *area=sqrt((x2-x1)*(x2-x1)+ (y2-y1)*(y2-y1));
+(gdb) p x1
+$1 = 2
+(gdb) p x2
+$2 = 4
+(gdb) p y1
+$3 = 3
+(gdb) p y2
+$4 = 5
+(gdb) n
+13  }
+(gdb) n
+main () at p1final.c:23
+23    output(x1,y1,x2,y2,area);
+(gdb) s
+output (x1=2, y1=3, x2=4, y2=5, area=2.82842708) at p1final.c:16
+16    printf(" the distance between points (%f ,%f)and (%f, %f)is %f\n",x1,y1,x2,y2,area);
+(gdb) p area
+$5 = 2.82842708
+(gdb) n
+ the distance between points (2.000000 ,3.000000)and (4.000000, 5.000000)is 2.828427
+17  }
+(gdb) n
+main () at p1final.c:24
+24    return 0;
+(gdb) n
+25  }
+(gdb) n
