@@ -1,1 +1,208 @@
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x931: file p5final.c, line 47.
+(gdb) r
+Starting program: /home/runner/Test2Session2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
 
+Breakpoint 1, main () at p5final.c:47
+47  {
+(gdb) n
+49    n=input();
+(gdb) s
+input () at p5final.c:4
+4   {
+(gdb) n
+6     printf("Enter the size of the array\n");
+(gdb) n
+Enter the size of the array
+7     scanf("%d",&n);
+(gdb) n
+5
+8     return n;
+(gdb) 
+9   }
+(gdb) n
+main () at p5final.c:50
+50    int a[n];
+(gdb) n
+51    init_array(n,a);
+(gdb) s
+init_array (n=5, a=0x7fffb116fbb0) at p5final.c:13
+13    for(int i=0;i<n;i++)
+(gdb) p n
+$1 = 5
+(gdb) n
+15      a[i] = i+1;
+(gdb) n
+13    for(int i=0;i<n;i++)
+(gdb) p a[i]
+$2 = 1
+(gdb) n
+15      a[i] = i+1;
+(gdb) n
+13    for(int i=0;i<n;i++)
+(gdb) p a[i]
+$3 = 2
+(gdb) n
+15      a[i] = i+1;
+(gdb) n
+13    for(int i=0;i<n;i++)
+(gdb) p a[i]
+$4 = 3
+(gdb) n
+15      a[i] = i+1;
+(gdb) n
+13    for(int i=0;i<n;i++)
+(gdb) p a[i]
+$5 = 4
+(gdb) n
+15      a[i] = i+1;
+(gdb) n
+13    for(int i=0;i<n;i++)
+(gdb) p a[i]
+$6 = 5
+(gdb) n
+17  }
+(gdb) n
+main () at p5final.c:52
+52    ets(n,a);
+(gdb) s
+ets (n=5, a=0x7fffb116fbb0) at p5final.c:22
+22  for(int i=1;i<n;i++)
+(gdb) n
+24      if(a[i]==0)
+(gdb) p a[i]
+$7 = 2
+(gdb) n
+26        for(j=a[i]+1;j<=n;j++)
+(gdb) n
+28            if(j%a[i]==0)
+(gdb) n
+26        for(j=a[i]+1;j<=n;j++)
+(gdb) p a[i]
+$8 = 2
+(gdb) n
+28            if(j%a[i]==0)
+(gdb) n
+29              a[j-1]=0;
+(gdb) n
+26        for(j=a[i]+1;j<=n;j++)
+(gdb) p a[j-1]
+$9 = 0
+(gdb) n
+28            if(j%a[i]==0)
+(gdb) n
+26        for(j=a[i]+1;j<=n;j++)
+(gdb) p a[i]
+$10 = 2
+(gdb) n
+22  for(int i=1;i<n;i++)
+(gdb) n
+24      if(a[i]==0)
+(gdb) p a[i]
+$11 = 3
+(gdb) n
+26        for(j=a[i]+1;j<=n;j++)
+(gdb) n
+28            if(j%a[i]==0)
+(gdb) n
+26        for(j=a[i]+1;j<=n;j++)
+(gdb) n
+28            if(j%a[i]==0)
+(gdb) n
+26        for(j=a[i]+1;j<=n;j++)
+(gdb) p j
+$12 = 5
+(gdb) n
+22  for(int i=1;i<n;i++)
+(gdb) n
+24      if(a[i]==0)
+(gdb) p a[i]
+$13 = 0
+(gdb) n
+25        continue;
+(gdb) n
+22  for(int i=1;i<n;i++)
+(gdb) p a[i]
+$14 = 0
+(gdb) n
+24      if(a[i]==0)
+(gdb) n
+26        for(j=a[i]+1;j<=n;j++)
+(gdb) n
+22  for(int i=1;i<n;i++)
+(gdb) p a[i]
+$15 = 5
+(gdb) n
+32  }
+(gdb) n
+main () at p5final.c:53
+53    display(n,a);
+(gdb) s
+display (n=5, a=0x7fffb116fbb0) at p5final.c:37
+37    printf("the prime numbers are\n");
+(gdb) n
+the prime numbers are
+38    for(int i=0;i<n;i++)
+(gdb) n
+40        if(a[i]!=0)
+(gdb) p a[i]
+$16 = 1
+(gdb) n
+42      printf(" %d  ",a[i]);
+(gdb) n
+38    for(int i=0;i<n;i++)
+(gdb) n
+40        if(a[i]!=0)
+(gdb) p a[i]
+$17 = 2
+(gdb) n
+42      printf(" %d  ",a[i]);
+(gdb) n
+38    for(int i=0;i<n;i++)
+(gdb) n
+40        if(a[i]!=0)
+(gdb) p a[i]
+$18 = 3
+(gdb) n
+42      printf(" %d  ",a[i]);
+(gdb) n
+38    for(int i=0;i<n;i++)
+(gdb) n
+40        if(a[i]!=0)
+(gdb) p a[i]
+$19 = 0
+(gdb) n
+38    for(int i=0;i<n;i++)
+(gdb) n
+40        if(a[i]!=0)
+(gdb) p a[i]
+$20 = 5
+(gdb) n
+42      printf(" %d  ",a[i]);
+(gdb) n
+38    for(int i=0;i<n;i++)
+(gdb) n
+45    }
+(gdb) n
+main () at p5final.c:54
+54    return 0;
+(gdb) n
+55  }
+(gdb) n
