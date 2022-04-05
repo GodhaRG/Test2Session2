@@ -358,9 +358,9 @@ main () at p6final.c:40
 (gdb) s
 output (string=0x7ffea30f31d0 "helloworldhello", 
     substring=0x7ffea30f31f0 "world", index=5) at p6final.c:32
-32    printf("The substring %s of string %s is %d\n",string,substring,index);
+32    printf("The substring %s of string %s is %d\n",substring,string,index);
 (gdb) n
-The substring helloworldhello of string world is 5
+The substring world of string helloworldhello is 5
 (gdb) n
 33  }
 (gdb) n
