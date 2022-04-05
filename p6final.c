@@ -29,7 +29,7 @@ int str_substr(char *string, char *substring)
 }
 void output(char *string, char *substring, int index)
 {
-  printf("The substring %s of string %s is %d",string,substring,index);
+  printf("The substring %s of string %s is %d\n",string,substring,index);
 }
 int main()
 {
